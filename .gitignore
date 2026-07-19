@@ -1,0 +1,19 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Environment / secrets
+.env
+.env.*
+
+# Editor / IDE
+.idea/
+.vscode/
+.idx/
+
+# Logs / temp
+*.log
+*.bak
+*.tmp
