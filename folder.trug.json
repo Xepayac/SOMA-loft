@@ -1,0 +1,108 @@
+{
+  "name": "SOMA-loft",
+  "version": "1.0.0",
+  "type": "REPOSITORY",
+  "description": "Static website for SOMA-loft.com — a hand-built single-page site (index.html + assets + sitemap). No build step.",
+  "dimensions": {
+    "website": {
+      "description": "Static website: HTML page, CSS/JS assets, sitemap",
+      "base_level": "BASE"
+    }
+  },
+  "capabilities": {
+    "extensions": [],
+    "vocabularies": [],
+    "profiles": []
+  },
+  "meta": {
+    "generated_by": "manual",
+    "last_synced": "2026-07-18",
+    "owner": "Xepayac",
+    "license": "Private",
+    "repository": "https://github.com/Xepayac/SOMA-loft"
+  },
+  "nodes": [
+    {
+      "id": "repo_root",
+      "type": "REPOSITORY",
+      "properties": {
+        "name": "SOMA-loft",
+        "description": "Static single-page website for SOMA-loft.com; deploy by serving the repository root."
+      },
+      "parent_id": null,
+      "contains": ["comp_index", "comp_assets", "comp_sitemap", "doc_readme"],
+      "metric_level": "KILO_REPOSITORY",
+      "dimension": "website"
+    },
+    {
+      "id": "comp_index",
+      "type": "FILE",
+      "properties": {
+        "name": "index.html",
+        "description": "The single-page site"
+      },
+      "parent_id": "repo_root",
+      "contains": [],
+      "metric_level": "BASE_FILE",
+      "dimension": "website"
+    },
+    {
+      "id": "comp_assets",
+      "type": "MODULE",
+      "properties": {
+        "name": "assets/",
+        "description": "Static assets — stylesheets (assets/css) and scripts (assets/js)"
+      },
+      "parent_id": "repo_root",
+      "contains": [],
+      "metric_level": "BASE_MODULE",
+      "dimension": "website"
+    },
+    {
+      "id": "comp_sitemap",
+      "type": "FILE",
+      "properties": {
+        "name": "sitemap.xml",
+        "description": "Sitemap for search-engine indexing"
+      },
+      "parent_id": "repo_root",
+      "contains": [],
+      "metric_level": "BASE_FILE",
+      "dimension": "website"
+    },
+    {
+      "id": "doc_readme",
+      "type": "DOCUMENT",
+      "properties": {
+        "name": "README.md",
+        "description": "Human entry point — structure and deployment notes"
+      },
+      "parent_id": "repo_root",
+      "contains": [],
+      "metric_level": "BASE_DOCUMENT",
+      "dimension": "website"
+    }
+  ],
+  "edges": [
+    {
+      "from_id": "repo_root",
+      "to_id": "comp_index",
+      "relation": "CONTAINS"
+    },
+    {
+      "from_id": "repo_root",
+      "to_id": "comp_assets",
+      "relation": "CONTAINS"
+    },
+    {
+      "from_id": "repo_root",
+      "to_id": "comp_sitemap",
+      "relation": "CONTAINS"
+    },
+    {
+      "from_id": "repo_root",
+      "to_id": "doc_readme",
+      "relation": "CONTAINS"
+    }
+  ]
+}
